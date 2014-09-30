@@ -120,6 +120,10 @@ fun! s:InsertSmartTab()
   return strpart("                  ",0,1+sts-sp)
 endfun
 
+fun! InsertSmartTab()
+  return s:InsertSmartTab()
+endfun
+
 fun! s:CheckLeaveLine(line)
   if ('cpo' !~ 'I') && exists('b:ctab_lastalign') && (a:line == b:ctab_lastalign)
     s/^\s*$//e
